@@ -1,0 +1,138 @@
+
+/* 
+    Created on : 19 mai 2020, 04:14:09
+    Author     : Yasser
+*/
+.root{
+    -fx-background-image: url("bank2.jpg");
+    -fx-background-insets: -20,-10;
+    -fx-background-position: left top, center;
+    -fx-background-repeat: stretch;
+    -fx-background-size: cover, auto;
+    -fx-backgroud-color: #0099ff;
+}
+.button{
+    
+    -fx-background-color: 
+        #1a1aff,
+        linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+        linear-gradient(#20262b, #191d22),
+        radial-gradient(center 50% 0%, radius 100%, rgba(0,0,0,0), rgba(255,255,255,0));
+    -fx-background-radius: 5,4,3,5;
+    -fx-background-insets: 0,1,2,0;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow( one-pass-box , black , 14, 0.0 , 6 , 0);
+    -fx-font-family: "Arial";
+    -fx-text-fill: linear-gradient(white, #d0d0d0);
+    -fx-font-size: 15px;
+    -fx-padding: 10 20 10 20;
+    
+}
+.button Text {
+    -fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.9) , 1, 0.0 , 0 , 1 );
+}
+.button:hover {
+    -fx-background-color: transparent;
+    -fx-text-fill: black;
+}
+.text-field {
+    -fx-background-color: black ;
+    -fx-background-insets: 0, 0 0 1 0 ;
+    -fx-background-radius: 50 ;
+}
+.text-field:focused {
+    -fx-background-color: -fx-focus-color, -fx-background ;
+}
+#nom_agence:hover,#num_agence:hover,#rechercher:hover
+{
+    -fx-background-color: wheat;
+    -fx-background-radius: 50;
+    -fx-background-insets: 0, 0 0 1 0 ;
+    -fx-padding: 0.166667em;
+}
+.text-area {
+    -fx-font-family: Consolas;
+    -fx-font-size: 15;
+    -fx-display-caret:true;
+    
+}
+
+.text-area .content {
+    -fx-background-color: white;
+}
+.text-area .content:hover{
+    -fx-background-color: wheat;
+    -fx-background-insets: 0, 0 0 1 0 ;
+}
+.table-view {
+    -fx-base: #1d1d1d;
+    -fx-background-color: #1d1d1d;
+    -fx-control-inner-background: #1d1d1d;
+    -fx-table-cell-border-color: transparent;
+    -fx-table-header-border-color: transparent;
+    -fx-padding: 5;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-size: 35;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent derive(-fx-base, 80%) transparent;
+    -fx-border-insets: 0 10 1 0;
+}
+
+.table-view.column-header-background {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header .label {
+    -fx-font-size: 15;
+    -fx-font-family: "Segoe UI Light";
+    -fx-text-fill: white;
+    -fx-alignment: center-left;
+    -fx-opacity: 1;
+}
+
+.table-view:focused .table-row-cell:focused {
+    -fx-border-color: derive(-fx-base, 20%);
+    -fx-background-insets: 0 0 0 0;
+}
+
+.table-view:focused .table-row-cell:selected {
+    -fx-background-color: derive(-fx-base, 20%);
+    -fx-background-insets: 0 0 0 0;
+}
+.table-view:focused .table-row-cell:focused {
+    -fx-border-color: derive(-fx-base, 20%);
+    -fx-background-insets: 0 0 0 0;
+    -fx-table-cell-border-color: transparent;
+}
+#num_agence,#nom_agence,#adresse {
+    -fx-background-color: white ;
+}
+#rech,#nom_ag,#num_ag,#adr{
+    -fx-font: 20px "Segoe UI Light";
+    -fx-background-color: transparent;
+    -fx-font-weight : bold;
+}
+.menu-button {
+    -fx-background-color: 
+        #1a1aff,
+        linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+        linear-gradient(#20262b, #191d22),
+        radial-gradient(center 50% 0%, radius 100%, rgba(0,0,0,0), rgba(255,255,255,0));
+    -fx-background-insets: 0,1,2,0;
+    -fx-effect: dropshadow( one-pass-box , black , 14, 0.0 , 6 , 0);
+    -fx-padding: 10 20 10 20;
+}
+.menu-button Text {
+    -fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.9) , 1, 0.0 , 0 , 1 );
+    
+}
+.menu-button:selected{
+    -fx-text-fill: white;
+}

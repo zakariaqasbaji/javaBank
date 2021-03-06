@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="employePane" prefHeight="583.0" prefWidth="1100.0" stylesheets="@style1.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="interfaceEmp.InterfaceEmployeController">
+   <children>
+      <Pane fx:id="detailsMesClients" layoutX="630.0" layoutY="59.0" prefHeight="524.0" prefWidth="442.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="59.0">
+         <children>
+            <Label layoutX="164.0" layoutY="20.0" text="Détails Client">
+               <font>
+                  <Font name="System Italic" size="23.0" />
+               </font>
+            </Label>
+            <Label layoutX="13.0" layoutY="193.0" text="N° Compte:" underline="true">
+               <font>
+                  <Font name="Segoe UI Light" size="13.0" />
+               </font></Label>
+            <TextField id="num_agence" fx:id="numeroCompte" layoutX="79.0" layoutY="189.0" prefHeight="25.0" prefWidth="131.0" />
+            <Label layoutX="10.0" layoutY="102.0" text="Nom du client:" underline="true">
+               <font>
+                  <Font name="Segoe UI Light" size="12.0" />
+               </font></Label>
+            <TextField id="num_agence" fx:id="nameClient" layoutX="94.0" layoutY="98.0" prefHeight="25.0" prefWidth="131.0" />
+            <Label layoutX="252.0" layoutY="101.0" text="Prénom:" underline="true" />
+            <TextField id="num_agence" fx:id="firstnameClient" layoutX="301.0" layoutY="97.0" prefHeight="25.0" prefWidth="131.0" />
+            <Label layoutX="26.0" layoutY="326.0" text="Adresse:" underline="true" />
+            <TextArea fx:id="adresseClient" layoutX="85.0" layoutY="277.0" prefHeight="133.0" prefWidth="332.0" />
+            <Button fx:id="buttonAjout" layoutX="300.0" layoutY="462.0" mnemonicParsing="false" onAction="#ajouterClient" prefHeight="25.0" prefWidth="109.0" text="Ajouter" />
+            <Button fx:id="modifierClient" layoutX="10.0" layoutY="462.0" mnemonicParsing="false" onAction="#modifierClient" prefHeight="25.0" prefWidth="109.0" text="Modifier" />
+            <TextField id="num_agence" fx:id="cinClient" layoutX="281.0" layoutY="189.0" />
+            <Label layoutX="237.0" layoutY="193.0" prefHeight="17.0" prefWidth="28.0" text="CIN:" underline="true" />
+            <Button layoutX="130.0" layoutY="462.0" mnemonicParsing="false" onAction="#clear" text="Vider les champs" />
+         </children>
+      </Pane>
+      <Label layoutX="33.0" layoutY="7.0" prefHeight="53.0" prefWidth="292.0" text="Agence GHANDI" textFill="#996633" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="798.0" AnchorPane.topAnchor="7.0">
+         <font>
+            <Font name="System Bold Italic" size="36.0" />
+         </font>
+      </Label>
+      <Button layoutX="927.0" layoutY="10.0" mnemonicParsing="false" onAction="#deconnecter" prefHeight="59.0" prefWidth="166.0" text="Se déconnecter" AnchorPane.rightAnchor="27.0" />
+      <Pane fx:id="MesClients" layoutX="-2.0" layoutY="59.0" prefHeight="524.0" prefWidth="665.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="59.0">
+         <children>
+            <TableView fx:id="tableClient" editable="true" fixedCellSize="0.0" focusTraversable="false" layoutX="9.0" layoutY="60.0" onMousePressed="#getSelectedClient" prefHeight="376.0" prefWidth="644.0">
+              <columns>
+                <TableColumn fx:id="nomClient" maxWidth="600.0" minWidth="0.0" prefWidth="161.0" text="Nom du client" />
+                  <TableColumn fx:id="prenomClient" maxWidth="600.0" minWidth="0.0" prefWidth="161.0" text="Prénom du client" />
+                  <TableColumn fx:id="cin" maxWidth="600.0" minWidth="0.0" prefWidth="161.0" text="CIN" />
+                <TableColumn fx:id="numCompte" maxWidth="600.0" minWidth="0.0" prefWidth="161.0" text="Numéro du compte" />
+                  <TableColumn fx:id="adresseC" maxWidth="600.0" minWidth="0.0" prefWidth="161.0" text="Adresse" />
+              </columns>
+            </TableView>
+            <TextField id="rechercher" fx:id="barreRecherche" layoutX="152.0" layoutY="20.0" onKeyPressed="#rechercherClient" prefHeight="25.0" prefWidth="464.0" />
+            <Label id="rech" layoutX="28.0" layoutY="20.0" prefHeight="27.0" prefWidth="98.0" text="Recherche :" />
+            <Button fx:id="supprimerClient" layoutX="277.0" layoutY="462.0" mnemonicParsing="false" onAction="#supprimerClient" text="Supprimer Client" />
+         </children>
+      </Pane>
+      <Pane fx:id="detailsMesCompes" layoutX="664.0" layoutY="71.0" prefHeight="482.0" prefWidth="435.0">
+         <children>
+            <Label id="rech" fx:id="labelTaux" layoutX="20.0" layoutY="340.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="25.0" prefWidth="140.0" text="Taux d'intérét :" underline="true" visible="false" />
+            <Label layoutX="156.0" layoutY="42.0" prefHeight="30.0" prefWidth="166.0" text="Détails du compte">
+               <font>
+                  <Font name="Arial Italic" size="20.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="type" layoutX="188.0" layoutY="266.0" onAction="#comboAct" prefHeight="39.0" prefWidth="201.0" promptText="Type du Compte" />
+            <Label id="nom_ag" layoutX="20.0" layoutY="190.0" prefHeight="30.0" prefWidth="76.0" text="Solde :" underline="true" />
+            <TextField id="num_agence" fx:id="taux" layoutX="188.0" layoutY="340.0" prefHeight="15.0" prefWidth="149.0" visible="false" />
+            <Label id="num_ag" layoutX="20.0" layoutY="111.0" text="N° du compte :" underline="true" />
+            <TextField id="num_agence" fx:id="numrCompte" layoutX="188.0" layoutY="111.0" prefHeight="25.0" prefWidth="133.0" />
+            <TextField id="num_agence" fx:id="solde" layoutX="188.0" layoutY="190.0" prefHeight="25.0" prefWidth="133.0" />
+            <Button layoutX="74.0" layoutY="406.0" mnemonicParsing="false" onAction="#modifierCompte" prefHeight="37.0" prefWidth="109.0" text="Modifier" />
+            <Button layoutX="254.0" layoutY="406.0" mnemonicParsing="false" onAction="#ajouterCompte" prefHeight="37.0" prefWidth="98.0" text="Ajouter" />
+            <Label id="rech" layoutX="20.0" layoutY="270.0" text="Type :" underline="true" />
+         </children>
+      </Pane>
+      <Pane fx:id="MesComptes" layoutX="1.0" layoutY="85.0" prefHeight="494.0" prefWidth="658.0">
+         <children>
+            <TableView fx:id="tableCompte" layoutX="16.0" layoutY="46.0" onMousePressed="#getSelectedCompte" prefHeight="376.0" prefWidth="615.0">
+              <columns>
+                <TableColumn fx:id="nmcpt" prefWidth="150.0" text="Numéro du compte" />
+                <TableColumn fx:id="soldecmptt" prefWidth="154.0" text="Solde" />
+                  <TableColumn fx:id="typeC" prefWidth="158.0" text="Type" />
+                  <TableColumn fx:id="tauxInteret" prefWidth="164.0" text="Taux d'intérét" />
+              </columns>
+            </TableView>
+            <Pane layoutX="25.0" layoutY="437.0" prefHeight="43.0" prefWidth="583.0">
+               <children>
+                  <Button fx:id="retraitButton" layoutX="28.0" layoutY="9.0" mnemonicParsing="false" onAction="#retraitPane" prefHeight="25.0" prefWidth="121.0" text="Retrait" />
+                  <Button fx:id="verserButton" layoutX="231.0" layoutY="9.0" mnemonicParsing="false" onAction="#verser" prefHeight="25.0" prefWidth="121.0" text="Verser" />
+                  <Button fx:id="supprimerCompte" layoutX="435.0" layoutY="9.0" mnemonicParsing="false" onAction="#supprimerCompte" prefHeight="25.0" prefWidth="121.0" text="Supprimer" />
+               </children>
+            </Pane>
+            <TextField id="rechercher" fx:id="recherche" layoutX="152.0" onKeyPressed="#rechercherCompte" prefHeight="25.0" prefWidth="435.0" />
+            <Label id="rech" layoutX="25.0" layoutY="-1.0" prefHeight="30.0" prefWidth="98.0" text="Recherche :" />
+         </children>
+      </Pane>
+      <MenuButton layoutX="681.0" layoutY="10.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="166.0" text="Aller à..." textFill="WHITE">
+        <items>
+          <MenuItem mnemonicParsing="false" onAction="#afficherInterfaceClient" text="Gestion des clients" />
+          <MenuItem mnemonicParsing="false" onAction="#afficherInterfaceCompte" text="Gestion des comptes" />
+        </items>
+      </MenuButton>
+   </children>
+</AnchorPane>

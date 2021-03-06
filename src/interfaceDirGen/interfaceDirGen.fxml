@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="directeur" prefHeight="583.0" prefWidth="1100.0" stylesheets="@style1.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="interfaceDirGen.InterfaceDirGenController">
+   <children>
+      <Pane fx:id="detailsPane" layoutX="658.0" layoutY="59.0" prefHeight="524.0" prefWidth="442.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="59.0">
+         <children>
+            <Label layoutX="167.0" layoutY="20.0" text="Détails Agence">
+               <font>
+                  <Font name="System Italic" size="23.0" />
+               </font>
+            </Label>
+            <Label id="num_ag" layoutX="18.0" layoutY="95.0" text="Numéro d'agence:" underline="true">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
+            <TextField id="num_agence" fx:id="numeroAgence" layoutX="221.0" layoutY="95.0" prefHeight="25.0" prefWidth="172.0" />
+            <Label id="nom_ag" layoutX="24.0" layoutY="199.0" text="Nom de l'agence:" underline="true" />
+            <TextField id="nom_agence" fx:id="nameAgence" layoutX="209.0" layoutY="199.0" prefHeight="25.0" prefWidth="172.0" />
+            <Label id="adr" layoutX="18.0" layoutY="343.0" text="Adresse:" underline="true" />
+            <TextArea id="adresse" fx:id="adresseAgence" layoutX="100.0" layoutY="290.0" prefHeight="133.0" prefWidth="332.0" />
+            <Button fx:id="buttonAjout" layoutX="266.0" layoutY="471.0" mnemonicParsing="false" onAction="#ajouterAgence" prefHeight="25.0" prefWidth="109.0" text="Ajouter" />
+            <Button fx:id="modifierAgence" layoutX="100.0" layoutY="471.0" mnemonicParsing="false" onAction="#modifierAgence" prefHeight="25.0" prefWidth="109.0" text="Modifier" />
+         </children>
+      </Pane>
+      <Label layoutX="33.0" layoutY="7.0" prefHeight="53.0" prefWidth="258.0" text="IslamicBank" textFill="#996633" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="832.0" AnchorPane.topAnchor="7.0">
+         <font>
+            <Font name="System Bold Italic" size="36.0" />
+         </font>
+      </Label>
+      <Button layoutX="974.0" layoutY="14.0" mnemonicParsing="false" onAction="#deconnecter" text="Se déconnecter" AnchorPane.rightAnchor="28.0" />
+      <Pane layoutX="-2.0" layoutY="59.0" prefHeight="524.0" prefWidth="665.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="59.0">
+         <children>
+            <TableView fx:id="tableAgence" editable="true" fixedCellSize="0.0" focusTraversable="false" layoutX="5.0" layoutY="74.0" onMousePressed="#getSelectedAgence" prefHeight="376.0" prefWidth="633.0">
+               <columns>
+                  <TableColumn fx:id="numAgence" maxWidth="600.0" minWidth="0.0" prefWidth="161.0" text="Numéro d'agence" />
+                  <TableColumn fx:id="nomAgence" maxWidth="600.0" minWidth="0.0" prefWidth="161.0" text="Nom d'agence" />
+                  <TableColumn fx:id="adresseA" maxWidth="600.0" minWidth="0.0" prefWidth="161.0" text="Adresse" />
+                  <TableColumn fx:id="nombreEmp" prefWidth="150.0" text="Nombre d'employés" />
+               </columns>
+            </TableView>
+            <TextField id="rechercher" fx:id="barreRecherche" layoutX="113.0" layoutY="23.0" onAction="#rechercherAgence" onKeyPressed="#rechercherAgence" prefHeight="25.0" prefWidth="464.0" />
+            <Label id="rech" layoutX="5.0" layoutY="20.0" text="Rechercher">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
+            <Pane layoutX="25.0" layoutY="456.0" prefHeight="43.0" prefWidth="583.0">
+               <children>
+                  <Button fx:id="supprimerA" layoutX="231.0" layoutY="9.0" mnemonicParsing="false" onAction="#supprimerAgence" prefHeight="25.0" prefWidth="121.0" text="Supprimer" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
